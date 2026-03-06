@@ -4,3 +4,5 @@ httpx
 python-dotenv
 pydantic
 websockets
+spacy
+python-dateutil

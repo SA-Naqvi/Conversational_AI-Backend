@@ -7,11 +7,26 @@ load_dotenv()
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from fastapi.middleware.cors import CORSMiddleware
 from conversation_manager.manager import handle_message
-from conversation_manager.session_store import reset_session
+from conversation_manager.session_store import (
+    reset_session, get_session, cleanup_expired_sessions,
+)
+from conversation_manager.summary_builder import build_patient_summary
 from models.schemas import ChatMessage
 
 app = FastAPI(title="Medical Recovery Companion")
+
+# CORS: allow the Vercel-deployed frontend (or any origin listed in env)
+cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:8080").split(",")
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[o.strip() for o in cors_origins],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 # Update paths to point to the built frontend react app (dist instead of raw frontend)
 FRONTEND_DIR = os.path.join(os.path.dirname(__file__), "..", "frontend", "dist")
@@ -48,6 +63,33 @@ async def new_session():
 async def reset(session_id: str):
     reset_session(session_id)
     return {"status": "reset"}
+
+
+@app.get("/api/session/{session_id}/summary")
+async def get_summary(session_id: str):
+    """Get a structured patient recovery summary."""
+    session = get_session(session_id)
+    patient_state = session.get("patient_state", {})
+
+    summary = build_patient_summary(patient_state)
+
+    return {
+        "summary": summary,
+        "patient_state": {
+            "surgery_type": patient_state.get("surgery_type"),
+            "days_post_op": patient_state.get("days_post_op"),
+            "pain_current": (
+                patient_state["pain_history"][-1]
+                if patient_state.get("pain_history") else None
+            ),
+            "temperature_current": (
+                patient_state["temperature_history"][-1]
+                if patient_state.get("temperature_history") else None
+            ),
+            "symptoms": patient_state.get("symptoms", []),
+        },
+    }
+
 
 @app.websocket("/ws/chat/{session_id}")
 async def websocket_chat(websocket: WebSocket, session_id: str):
