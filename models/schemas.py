@@ -32,6 +32,11 @@ class PatientState(BaseModel):
     red_flag_details: Optional[Dict[str, Any]] = None
     escalation_time: Optional[datetime] = None
 
+    # Recovery Analytics
+    recovery_score: Optional[float] = None        # 0.0-1.0 overall score
+    pain_trend: Optional[str] = None              # "improving", "worsening", "stable"
+    fever_status: Optional[str] = None            # "normal", "low_grade", "elevated", "critical"
+
 
 class SessionMetadata(BaseModel):
     total_turns: int = 0

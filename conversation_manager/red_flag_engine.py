@@ -68,8 +68,18 @@ def check_red_flags(message: str, patient_state: dict) -> Tuple[bool, str]:
     if flag:
         return True, reason
 
-    # ── 6. Severe/spreading symptoms ──
+    # ── 6. Temperature trend worsening ──
+    flag, reason = check_temperature_trend(patient_state)
+    if flag:
+        return True, reason
+
+    # ── 7. Severe/spreading symptoms ──
     flag, reason = check_severe_symptoms(patient_state, days_post_op)
+    if flag:
+        return True, reason
+
+    # ── 8. Rapid symptom accumulation ──
+    flag, reason = check_symptom_worsening(patient_state)
     if flag:
         return True, reason
 
@@ -182,10 +192,36 @@ def check_pain_trend(
     recent = pain_history[-3:]
     if all(isinstance(v, (int, float)) for v in recent):
         if all(recent[i] < recent[i + 1] for i in range(len(recent) - 1)):
+            # After day 3: critical red flag
             if days_post_op is not None and days_post_op > 3:
                 return (
                     True,
                     f"PAIN_TREND_WORSENING: {recent} on day {days_post_op}",
+                )
+            # Before day 3: still escalate if pain is high
+            if recent[-1] >= 7:
+                return (
+                    True,
+                    f"PAIN_TREND_WORSENING_EARLY: {recent} (high pain, rising)",
+                )
+
+    return False, ""
+
+
+def check_temperature_trend(patient_state: dict) -> Tuple[bool, str]:
+    """Check if temperature is trending upward across consecutive readings."""
+    temp_history = patient_state.get("temperature_history", [])
+    if len(temp_history) < 3:
+        return False, ""
+
+    recent = temp_history[-3:]
+    if all(isinstance(v, (int, float)) for v in recent):
+        # Strictly increasing temperatures
+        if all(recent[i] < recent[i + 1] for i in range(len(recent) - 1)):
+            if recent[-1] >= 100.4:  # Latest is at least low-grade fever
+                return (
+                    True,
+                    f"TEMPERATURE_TREND_RISING: {recent} (latest {recent[-1]}°F)",
                 )
 
     return False, ""
@@ -232,3 +268,21 @@ def is_fever_with_chills(patient_state: dict) -> bool:
     """Check for fever + chills combination."""
     flag, _ = check_infection_signs(patient_state)
     return flag
+
+
+def check_symptom_worsening(patient_state: dict) -> Tuple[bool, str]:
+    """
+    Check if symptoms are accumulating rapidly.
+    5+ distinct symptoms is a concern.
+    """
+    symptoms = patient_state.get("symptoms", [])
+    if len(symptoms) >= 5:
+        symptom_names = [
+            s if isinstance(s, str) else s.get("name", "")
+            for s in symptoms
+        ]
+        return (
+            True,
+            f"RAPID_SYMPTOM_ACCUMULATION: {len(symptoms)} symptoms ({', '.join(symptom_names[:5])})",
+        )
+    return False, ""

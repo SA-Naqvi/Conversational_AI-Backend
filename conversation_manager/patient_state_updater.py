@@ -310,3 +310,75 @@ def update_patient_state(session: dict, extraction: dict) -> None:
             existing_symptoms.add(symptom_name)
 
     session["patient_state"] = patient_state
+
+    # Compute recovery analytics after every state update
+    compute_recovery_analytics(patient_state)
+
+
+# ============ Recovery Analytics ============
+
+def compute_recovery_analytics(patient_state: dict) -> None:
+    """
+    Compute and attach recovery analytics to patient state:
+    - recovery_score (0.0 – 1.0)
+    - pain_trend ("improving", "worsening", "stable")
+    - fever_status ("normal", "low_grade", "elevated", "critical")
+    """
+    # ── Pain trend ──
+    pain_history = patient_state.get("pain_history", [])
+    if len(pain_history) >= 2:
+        if pain_history[-1] < pain_history[-2]:
+            patient_state["pain_trend"] = "improving"
+        elif pain_history[-1] > pain_history[-2]:
+            patient_state["pain_trend"] = "worsening"
+        else:
+            patient_state["pain_trend"] = "stable"
+    elif len(pain_history) == 1:
+        patient_state["pain_trend"] = "stable"
+
+    # ── Fever status ──
+    temp_history = patient_state.get("temperature_history", [])
+    if temp_history:
+        latest_temp = temp_history[-1]
+        if isinstance(latest_temp, (int, float)):
+            if latest_temp >= 102.0:
+                patient_state["fever_status"] = "critical"
+            elif latest_temp >= 101.0:
+                patient_state["fever_status"] = "elevated"
+            elif latest_temp >= 100.4:
+                patient_state["fever_status"] = "low_grade"
+            else:
+                patient_state["fever_status"] = "normal"
+
+    # ── Recovery score (0.0 = critical, 1.0 = healthy) ──
+    score = 1.0
+    deductions = 0.0
+
+    # Pain penalty (latest pain / 10)
+    if pain_history:
+        latest_pain = pain_history[-1]
+        if isinstance(latest_pain, (int, float)):
+            deductions += (latest_pain / 10) * 0.35  # max 0.35 deduction
+
+    # Pain trend penalty
+    if patient_state.get("pain_trend") == "worsening":
+        deductions += 0.10
+
+    # Temperature penalty
+    if patient_state.get("fever_status") == "critical":
+        deductions += 0.30
+    elif patient_state.get("fever_status") == "elevated":
+        deductions += 0.20
+    elif patient_state.get("fever_status") == "low_grade":
+        deductions += 0.10
+
+    # Symptom penalty (each symptom = 0.05, max 0.25)
+    symptom_count = len(patient_state.get("symptoms", []))
+    deductions += min(symptom_count * 0.05, 0.25)
+
+    # Red flag detected
+    if patient_state.get("red_flag_detected"):
+        deductions += 0.30
+
+    score = max(0.0, score - deductions)
+    patient_state["recovery_score"] = round(score, 2)

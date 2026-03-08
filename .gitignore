@@ -73,3 +73,20 @@ venv.bak/
 *.db
 *.sqlite3
 .DS_Store
+# =========================
+# LLM Models
+# =========================
+
+# Ignore GGUF models
+*.gguf
+
+# Ignore any large model files
+*.bin
+*.pt
+*.safetensors
+
+# Ignore llama.cpp models directory
+llama_server/llama.cpp/models/*
+
+# Keep folder but ignore files
+!llama_server/llama.cpp/models/.keep

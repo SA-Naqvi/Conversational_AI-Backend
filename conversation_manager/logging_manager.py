@@ -88,6 +88,27 @@ def log_error(session_id: str, error_type: str, message: str):
     }))
 
 
+def log_generation_metrics(
+    session_id: str,
+    prompt_tokens: int,
+    response_tokens: int,
+    generation_time: float,
+    tokens_per_second: float,
+    stage: str,
+):
+    """Log LLM generation performance metrics."""
+    logger.info(json.dumps({
+        "event": "generation_metrics",
+        "session_id": session_id,
+        "prompt_tokens": prompt_tokens,
+        "response_tokens": response_tokens,
+        "generation_time": round(generation_time, 3),
+        "tokens_per_second": round(tokens_per_second, 1),
+        "stage": stage,
+        "timestamp": datetime.now().isoformat(),
+    }))
+
+
 def _safe_serialize(obj):
     """Safely serialize an object for JSON logging."""
     try:

@@ -2,6 +2,7 @@
 Token counting and budget management for LLM prompts.
 Uses a simple word-based approximation (≈1.3 tokens per word for English).
 """
+from config import MAX_HISTORY_TOKENS
 
 
 # Approximate tokens per word for English text with Qwen tokenizer
@@ -19,7 +20,7 @@ def count_tokens(text: str) -> int:
     return int(len(words) * TOKENS_PER_WORD)
 
 
-def trim_history(history: list, max_tokens: int) -> list:
+def trim_history(history: list, max_tokens: int = None) -> list:
     """
     Trim conversation history to fit within a token budget.
     Keeps the most recent messages, removing oldest first.
@@ -33,6 +34,9 @@ def trim_history(history: list, max_tokens: int) -> list:
     """
     if not history:
         return []
+
+    if max_tokens is None:
+        max_tokens = MAX_HISTORY_TOKENS
 
     total = 0
     trimmed = []

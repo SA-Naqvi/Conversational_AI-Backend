@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 import uuid
+import asyncio
+import logging
 
 load_dotenv()
 
@@ -16,6 +18,7 @@ from conversation_manager.summary_builder import build_patient_summary
 from models.schemas import ChatMessage
 
 app = FastAPI(title="Medical Recovery Companion")
+logger = logging.getLogger("medical_bot")
 
 # CORS: allow the Vercel-deployed frontend (or any origin listed in env)
 cors_origins = os.getenv("CORS_ORIGINS", "http://localhost:5173,http://localhost:8080").split(",")
@@ -52,6 +55,27 @@ async def serve_react_app(full_path: str):
         with open(index_path, encoding='utf-8') as f:
             return HTMLResponse(f.read())
     return HTMLResponse("Frontend isn't built yet. Run 'npm run build' in the frontend dir.", status_code=404)
+
+
+# ── Background session cleanup ──
+
+async def _session_cleanup_loop():
+    """Background task: clean up expired sessions every 5 minutes."""
+    while True:
+        await asyncio.sleep(300)  # 5 minutes
+        try:
+            removed = cleanup_expired_sessions()
+            if removed:
+                logger.info(f"Session cleanup: removed {removed} expired session(s)")
+        except Exception as e:
+            logger.error(f"Session cleanup error: {e}")
+
+
+@app.on_event("startup")
+async def startup_event():
+    """Start background tasks on application startup."""
+    asyncio.create_task(_session_cleanup_loop())
+    logger.info("Background session cleanup task started (every 5 min)")
 
 
 @app.post("/session/new")

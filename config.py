@@ -7,6 +7,11 @@ from datetime import timedelta
 # ============ LLM Configuration ============
 LM_STUDIO_BASE_URL = os.getenv("LM_STUDIO_BASE_URL", "http://localhost:1234/v1")
 LM_STUDIO_MODEL = os.getenv("LM_STUDIO_MODEL", "qwen/qwen3-4b")
+
+# llama.cpp server configuration
+LLAMA_CPP_BASE_URL = os.getenv("LLAMA_CPP_BASE_URL", "http://localhost:8080")
+LLAMA_CPP_MODEL = os.getenv("LLAMA_CPP_MODEL", "qwen3-4b")
+
 LLM_CONTEXT_LENGTH = 4096
 LLM_MAX_TOKENS = 512
 LLM_TEMPERATURE = 0.7
@@ -15,11 +20,30 @@ LLM_TOP_K = 15
 LLM_REPEAT_PENALTY = 1.1
 LLM_TIMEOUT_SECONDS = 60
 
+# ============ Dynamic Token Budgets (per stage) ============
+STAGE_MAX_TOKENS = {
+    "INIT": 120,
+    "INTAKE_SURGERY": 80,
+    "INTAKE_DATE": 80,
+    "INTAKE_BASELINE": 120,
+    "MONITORING": 120,
+    "SUMMARY": 200,
+    "ESCALATED": 80,
+}
+DEFAULT_STAGE_MAX_TOKENS = 120
+
+# ============ Streaming ============
+STREAM_BUFFER_SIZE = int(os.getenv("STREAM_BUFFER_SIZE", "6"))
+
+# ============ Prompt Caching ============
+PROMPT_CACHE_TTL = int(os.getenv("PROMPT_CACHE_TTL", "300"))  # seconds
+
 # ============ Session Configuration ============
 SESSION_TTL = timedelta(hours=2)
 MAX_SESSIONS = 100
 SESSION_CLEANUP_INTERVAL = 300  # seconds
 MAX_HISTORY_TURNS = 8  # 4 exchanges (user + assistant)
+MAX_HISTORY_TOKENS = 600  # token-based history budget
 
 # ============ Input Validation ============
 MAX_INPUT_LENGTH = 2000

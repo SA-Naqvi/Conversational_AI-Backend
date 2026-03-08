@@ -3,6 +3,10 @@ LLM prompt construction with token budgeting.
 Builds structured prompts for Qwen3 4B GGUF with patient context.
 """
 from llm_engine.token_manager import count_tokens, trim_history
+from llm_engine.prompt_cache import get_prompt_cache
+from config import (
+    STAGE_MAX_TOKENS, DEFAULT_STAGE_MAX_TOKENS, MAX_HISTORY_TOKENS,
+)
 
 NURSE_PERSONA = """You are Nurse GPT-E, a professional post-operative recovery companion.
 Your role is to:
@@ -35,27 +39,43 @@ def build_prompt(session: dict, user_message: str, state_guidance: str = None) -
     history = session.get("history", [])
     stage = session.get("conversation_stage", "INIT")
 
-    # Build system prompt with patient state
-    system_content = NURSE_PERSONA + "\n\n"
-    system_content += format_patient_state(patient_state)
-    system_content += f"\nConversation Stage: {stage}\n"
+    # Format patient state for the prompt (also used as cache key component)
+    patient_state_str = format_patient_state(patient_state)
 
+    # Build system content with prompt cache
+    cache = get_prompt_cache()
+
+    def _build_system():
+        content = NURSE_PERSONA + "\n\n"
+        content += patient_state_str
+        content += f"\nConversation Stage: {stage}\n"
+        content += "\nRespond naturally and supportively. Provide guidance within scope."
+        content += "\nAsk for clarification if needed."
+        return content
+
+    system_content = cache.get_or_build(
+        NURSE_PERSONA, patient_state_str, _build_system
+    )
+
+    # Append state guidance (dynamic per-turn, not cached)
     if state_guidance:
         system_content += f"\n{state_guidance}\n"
-
-    system_content += "\nRespond naturally and supportively. Provide guidance within scope."
-    system_content += "\nAsk for clarification if needed."
 
     messages = [{"role": "system", "content": system_content}]
 
     # Add conversation history (trimmed to token budget)
-    trimmed = trim_history(history, max_tokens=1200)
+    trimmed = trim_history(history, max_tokens=MAX_HISTORY_TOKENS)
     messages.extend(trimmed)
 
     # Add current user message
     messages.append({"role": "user", "content": user_message})
 
     return messages
+
+
+def get_max_tokens(stage: str) -> int:
+    """Get the max response tokens for a given conversation stage."""
+    return STAGE_MAX_TOKENS.get(stage, DEFAULT_STAGE_MAX_TOKENS)
 
 
 def format_patient_state(patient_state: dict) -> str:
