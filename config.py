@@ -18,7 +18,7 @@ LLM_TEMPERATURE = 0.7
 LLM_TOP_P = 0.9
 LLM_TOP_K = 15
 LLM_REPEAT_PENALTY = 1.1
-LLM_TIMEOUT_SECONDS = 60
+LLM_TIMEOUT_SECONDS = 300
 
 # ============ Dynamic Token Budgets (per stage) ============
 STAGE_MAX_TOKENS = {
