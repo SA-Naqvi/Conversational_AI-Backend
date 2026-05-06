@@ -1,0 +1,16 @@
+DIABETES MANAGEMENT DURING SURGICAL RECOVERY
+
+Why Diabetes Complicates Surgery and Recovery
+Diabetes mellitus, both type 1 and type 2, significantly increases surgical risk and complication rates: impaired immune function increases infection risk, impaired microvascular circulation reduces wound healing and oxygen delivery, poor glucose control (high blood sugar) inhibits white blood cell function, and diabetes-related neuropathy may mask pain and infection warning signs.
+
+Perioperative Blood Glucose Targets
+Target blood glucose: 140–180 mg/dL (7.8–10 mmol/L) in the hospital. Avoid hypoglycemia (< 70 mg/dL / 3.9 mmol/L) — also dangerous post-operatively. Tight control (below 140 mg/dL) in the ICU has been shown to improve outcomes in some studies; generally hospitals target the 140–180 range to balance benefit and hypoglycemia risk.
+
+Insulin Management Around Surgery
+Basal insulin (long-acting): typically continued at 75–80% of home dose the night before and morning of surgery. Bolus insulin (short-acting): held until patient is eating. Oral diabetes medications: metformin is typically held 24–48 hours before and after surgery due to lactic acidosis risk; other medications per anesthesia team guidance.
+
+Blood Glucose Monitoring Post-Surgery
+Monitor blood glucose every 4–6 hours initially. Adjust insulin accordingly. Stress-induced hyperglycemia (high blood sugar from surgical stress) occurs even in non-diabetics — more pronounced in diabetics. High blood sugar (> 180 mg/dL) persistently post-operatively predicts higher infection rates.
+
+Wound Healing in Diabetics
+Enhanced wound care protocols for diabetic patients. Inspect surgical sites daily. Report any signs of infection (redness, warmth, drainage) immediately. Adequate glucose control is the single most important wound-healing intervention for diabetics.

@@ -1,0 +1,19 @@
+STOMACH PROTECTION: ANTACIDS AND PROTON PUMP INHIBITORS
+
+Why Stomach Protection Is Needed After Surgery
+NSAIDs (ibuprofen, naproxen, ketorolac) commonly used for post-operative pain inhibit prostaglandins that protect the stomach lining, increasing the risk of gastric ulcers and GI bleeding. Proton pump inhibitors (PPIs) or antacids counteract this risk.
+
+Proton Pump Inhibitors (PPIs)
+Mechanism: block the proton pump in the stomach, dramatically reducing acid production. Common PPIs: omeprazole (Prilosec), pantoprazole (Protonix), esomeprazole (Nexium), lansoprazole (Prevacid). Use: take 30–60 minutes before the first meal of the day. When to use: prescribed with NSAIDs, especially for patients with history of ulcers, elderly patients, or those on blood thinners.
+
+H2 Blockers
+Mechanism: block histamine H2 receptors, reducing acid production (less potent than PPIs). Examples: famotidine (Pepcid), ranitidine (recalled due to contaminant concerns). Use: taken twice daily or as needed for heartburn.
+
+Antacids
+Mechanism: neutralize existing stomach acid. Examples: Tums (calcium carbonate), Maalox, Mylanta. Use: for immediate relief of heartburn or GI upset. Important: antacids can interfere with absorption of some medications (antibiotics, thyroid medications) — take 2 hours apart.
+
+Duration of Therapy
+For patients taking NSAIDs: continue PPI for the duration of NSAID use. For patients with significant stress ulcer risk (ICU, mechanical ventilation): ongoing PPI during hospitalization. Not intended for indefinite use — discuss stopping with your doctor.
+
+Side Effects of PPIs (Long-Term Use)
+Reduced calcium and magnesium absorption (relevance if used for months-years). Increased risk of Clostridioides difficile infection with prolonged use. For short post-operative courses (days-weeks), PPIs are very safe.

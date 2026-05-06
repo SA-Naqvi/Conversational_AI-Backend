@@ -1,0 +1,6 @@
+<think>
+Okay, the user sent "Hi". I need to respond as Nurse GPT-E. Since they haven't provided any surgery details yet, I should start with the intake process.
+
+First, I remember the protocol says to ask for the type of surgery. The user hasn't mentioned that yet. So my next step is to prompt them for the surgery type. 
+
+I need to make

@@ -1,0 +1,40 @@
+{
+  "crm": [
+    {"id": "crm_01", "utterance": "My name is Sarah Williams", "expected_tool": "update_user_info", "expected_args": {"field": "name"}, "should_fire": true},
+    {"id": "crm_02", "utterance": "What information do you have about me?", "expected_tool": "get_user_info", "expected_args": {}, "should_fire": true},
+    {"id": "crm_03", "utterance": "My phone number is 555-123-4567", "expected_tool": "update_user_info", "expected_args": {"field": "phone"}, "should_fire": true},
+    {"id": "crm_04", "utterance": "I am allergic to penicillin", "expected_tool": "update_user_info", "expected_args": {"field": "medication_allergies"}, "should_fire": true},
+    {"id": "crm_05", "utterance": "Please note that my caregiver is my daughter Jane", "expected_tool": "update_user_info", "expected_args": {"field": "caregiver_name"}, "should_fire": true},
+    {"id": "crm_06", "utterance": "You can reach me by email at sarah@email.com", "expected_tool": "update_user_info", "expected_args": {"field": "email"}, "should_fire": true}
+  ],
+  "openfda": [
+    {"id": "fda_01", "utterance": "What are the side effects of ibuprofen?", "expected_tool": "search_drug_adverse_events", "expected_args": {"drug_name": "ibuprofen"}, "should_fire": true},
+    {"id": "fda_02", "utterance": "Tell me the FDA warnings for oxycodone", "expected_tool": "search_drug_label", "expected_args": {"drug_name": "oxycodone"}, "should_fire": true},
+    {"id": "fda_03", "utterance": "Has aspirin been recalled recently?", "expected_tool": "check_drug_recall", "expected_args": {"drug_name": "aspirin"}, "should_fire": true},
+    {"id": "fda_04", "utterance": "What is the recommended dosage for amoxicillin?", "expected_tool": "search_drug_label", "expected_args": {"drug_name": "amoxicillin"}, "should_fire": true},
+    {"id": "fda_05", "utterance": "Can acetaminophen cause liver damage?", "expected_tool": "search_drug_label", "expected_args": {"drug_name": "acetaminophen"}, "should_fire": true},
+    {"id": "fda_06", "utterance": "What adverse reactions are reported for metformin?", "expected_tool": "search_drug_adverse_events", "expected_args": {"drug_name": "metformin"}, "should_fire": true}
+  ],
+  "pubmed": [
+    {"id": "pub_01", "utterance": "What does research say about swelling after knee replacement?", "expected_tool": "search_pubmed", "expected_args": {"query": "swelling knee replacement"}, "should_fire": true},
+    {"id": "pub_02", "utterance": "Are there any studies on post-operative pain management techniques?", "expected_tool": "search_pubmed", "expected_args": {"query": "post-operative pain management"}, "should_fire": true},
+    {"id": "pub_03", "utterance": "What does the latest research say about wound healing?", "expected_tool": "search_pubmed", "expected_args": {"query": "wound healing"}, "should_fire": true},
+    {"id": "pub_04", "utterance": "Find me research articles about DVT prevention after surgery", "expected_tool": "search_pubmed", "expected_args": {"query": "DVT prevention surgery"}, "should_fire": true},
+    {"id": "pub_05", "utterance": "What do clinical studies say about physical therapy after hip replacement?", "expected_tool": "search_pubmed", "expected_args": {"query": "physical therapy hip replacement"}, "should_fire": true},
+    {"id": "pub_06", "utterance": "Is there evidence that cold therapy helps recovery?", "expected_tool": "search_pubmed", "expected_args": {"query": "cold therapy recovery"}, "should_fire": true}
+  ],
+  "calendar": [
+    {"id": "cal_01", "utterance": "Schedule a follow-up appointment for next Monday at 10am", "expected_tool": "create_calendar_event", "expected_args": {"summary": "follow-up", "date": "next Monday"}, "should_fire": true},
+    {"id": "cal_02", "utterance": "What appointments do I have coming up?", "expected_tool": "list_calendar_events", "expected_args": {}, "should_fire": true},
+    {"id": "cal_03", "utterance": "Cancel my appointment", "expected_tool": "delete_calendar_event", "expected_args": {}, "should_fire": true},
+    {"id": "cal_04", "utterance": "Book a physical therapy session for tomorrow at 2pm", "expected_tool": "create_calendar_event", "expected_args": {"summary": "physical therapy"}, "should_fire": true}
+  ],
+  "no_tool": [
+    {"id": "none_01", "utterance": "How are you?", "expected_tool": null, "expected_args": {}, "should_fire": false},
+    {"id": "none_02", "utterance": "My pain is about 5 today", "expected_tool": null, "expected_args": {}, "should_fire": false},
+    {"id": "none_03", "utterance": "Thank you for your help", "expected_tool": null, "expected_args": {}, "should_fire": false},
+    {"id": "none_04", "utterance": "I am feeling a bit better than yesterday", "expected_tool": null, "expected_args": {}, "should_fire": false},
+    {"id": "none_05", "utterance": "I had knee surgery last week", "expected_tool": null, "expected_args": {}, "should_fire": false},
+    {"id": "none_06", "utterance": "My temperature is 98.6F", "expected_tool": null, "expected_args": {}, "should_fire": false}
+  ]
+}

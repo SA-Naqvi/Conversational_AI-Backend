@@ -1,0 +1,20 @@
+SURGICAL SITE INFECTION (SSI) — PREVENTION AND MANAGEMENT
+
+Classification of SSIs
+According to the CDC, SSIs are classified as:
+Superficial incisional SSI: involves only skin and subcutaneous tissue. Deep incisional SSI: involves deep soft tissues (fascia, muscle). Organ/space SSI: affects organs or cavities opened during surgery (e.g., peritonitis after abdominal surgery).
+
+Causative Organisms
+Most SSIs are caused by Staphylococcus aureus (including MRSA), Streptococcus species, and gram-negative rods (E. coli, Klebsiella, Pseudomonas). Polymicrobial infections are common after bowel surgery.
+
+Timing of SSI Development
+Most SSIs present 5–10 days after surgery, though deep or organ SSIs can present later. SSIs occurring within 30 days of surgery (or within 1 year if an implant was placed) are classified as surgical site infections.
+
+Diagnosis
+Clinical signs: redness, warmth, swelling, purulent drainage, wound opening, fever. Laboratory: wound culture, CBC (elevated white blood cell count), inflammatory markers (CRP, ESR). Imaging: ultrasound or CT scan to detect deep fluid collections (abscess).
+
+Treatment
+Superficial SSI: wound opening and irrigation (by surgeon), wound care, oral antibiotics. Deep SSI: IV antibiotics, surgical debridement and drainage. Abscess: incision and drainage (I&D). Implant infection: often requires implant removal — devastating complication after joint replacement.
+
+Prevention
+Preoperative: skin preparation with chlorhexidine scrub the night before surgery, preoperative antibiotics within 60 minutes of incision. Intraoperative: sterile technique, maintaining normal body temperature and blood glucose. Postoperative: proper wound care, early detection and treatment of SSI.

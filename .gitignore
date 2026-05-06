@@ -1,0 +1,109 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Environment Variables
+.env
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IDE / Editors
+.idea/
+.vscode/
+
+# Miscellaneous
+*.log
+*.db
+*.sqlite3
+.DS_Store
+
+# =========================
+# LLM Models & Engine Binaries
+# =========================
+
+# Ignore specific model directories
+sherpa-onnx-streaming-zipformer-en-2023-06-26/
+piper-amy-low/
+
+# Ignore llama.cpp models directory
+llama_server/llama.cpp/models/*
+!llama_server/llama.cpp/models/.keep
+
+# Ignore common model binary formats
+*.gguf
+*.onnx
+*.onnx.json
+*.bin
+*.pt
+*.safetensors
+*.ckpt
+
+# Large compressed model files
+*.tar
+*.tar.gz
+*.tar.bz2
+*.zip
+# Local environment and cache
+venv/
+.venv/
+__pycache__/
+.pytest_cache/
+.coverage
+.env

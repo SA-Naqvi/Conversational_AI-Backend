@@ -1,0 +1,12 @@
+[33m45e3c14[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m Evals implemented
+[33mb1c7e2c[m updated frontend
+[33ma37fe4b[m Evals has been implemented
+[33m4515456[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m final
+[33m3284ce4[m Resolve merge conflict (automated merge check)
+[33m1682744[m added voice features and ASR integration (fixed storage issue)
+[33m16e8215[m Docker implemented
+[33m66f0f3b[m Readme and multiple description file are added with Docterfile
+[33m852b0c6[m Llama.cpp implement but has issues
+[33m8959542[m Merge pull request #1 from SA-Naqvi/reza
+[33mac376c4[m Backend architecture changed and connected to frontend
+[33mc769008[m[33m ([m[1;31morigin/naqvi[m[33m, [m[1;31morigin/asad[m[33m)[m first

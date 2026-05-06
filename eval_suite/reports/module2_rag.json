@@ -1,0 +1,449 @@
+{
+  "total_queries": 34,
+  "evaluated_queries": 34,
+  "mean_precision_at_5": 0.0,
+  "mean_recall_at_5": 0.147,
+  "mean_mrr": 0.0,
+  "per_query": [
+    {
+      "id": "rag_01",
+      "query": "How should I care for my surgical wound?",
+      "category": "wound_care",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_02_wound_care_instructions.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_02",
+      "query": "What are the signs of infection after surgery?",
+      "category": "infection",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_08_signs_of_infection.txt",
+        "doc_38_surgical_site_infection.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_03",
+      "query": "How do I manage pain after knee replacement?",
+      "category": "pain_management",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_03_pain_management_guide.txt",
+        "doc_11_knee_replacement_recovery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_04",
+      "query": "When can I return to work after surgery?",
+      "category": "activity",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_10_returning_to_work.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_05",
+      "query": "What should I eat after surgery for better healing?",
+      "category": "nutrition",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_05_diet_after_surgery.txt",
+        "doc_53_nutrition_healing.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_06",
+      "query": "How long does recovery take after hip replacement?",
+      "category": "procedure_specific",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_12_hip_replacement_recovery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_07",
+      "query": "What are the side effects of opioid pain medication?",
+      "category": "medication",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_27_opioid_pain_medication.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_08",
+      "query": "How should I take ibuprofen after surgery?",
+      "category": "medication",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_28_nsaids_ibuprofen_guide.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_09",
+      "query": "What exercises can I do during recovery?",
+      "category": "physical_therapy",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_44_walking_after_surgery.txt",
+        "doc_45_physical_therapy_basics.txt",
+        "doc_46_range_of_motion_exercises.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_10",
+      "query": "What is deep vein thrombosis and how do I prevent it?",
+      "category": "complications",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_36_deep_vein_thrombosis.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_11",
+      "query": "How do I care for my surgical drain?",
+      "category": "wound_care",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_09_drain_care.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_12",
+      "query": "When should I schedule follow-up appointments?",
+      "category": "appointments",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_07_follow_up_appointments.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_13",
+      "query": "What breathing exercises should I do after surgery?",
+      "category": "physical_therapy",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_43_breathing_exercises.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_14",
+      "query": "How do I manage fatigue during recovery?",
+      "category": "recovery",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_50_managing_fatigue.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_15",
+      "query": "What should I know about blood thinners after surgery?",
+      "category": "medication",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_29_blood_thinners_guide.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_16",
+      "query": "How do I deal with nausea after anesthesia?",
+      "category": "medication",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_42_anesthesia_side_effects.txt",
+        "doc_30_anti_nausea_medications.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_17",
+      "query": "What are the risks of pneumonia after surgery?",
+      "category": "complications",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_40_pneumonia_after_surgery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_18",
+      "query": "How should elderly patients recover from surgery?",
+      "category": "special_populations",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_57_elderly_surgery_recovery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_19",
+      "query": "What activities should I restrict after surgery?",
+      "category": "activity",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_04_activity_restrictions.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_20",
+      "query": "How does diabetes affect surgical recovery?",
+      "category": "special_populations",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_56_diabetes_management_surgery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_21",
+      "query": "What vitamins help with healing after surgery?",
+      "category": "nutrition",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_35_vitamins_supplements_recovery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_22",
+      "query": "How do I sleep better during recovery?",
+      "category": "recovery",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_52_sleep_hygiene_recovery.txt",
+        "doc_33_sleep_aids_after_surgery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_23",
+      "query": "What is pulmonary embolism and what are its signs?",
+      "category": "complications",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_37_pulmonary_embolism.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_24",
+      "query": "How do I handle mental health challenges after surgery?",
+      "category": "mental_health",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_51_mental_health_after_surgery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_25",
+      "query": "What should caregivers know about post-op care?",
+      "category": "caregiver",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_60_caregiver_guide.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_26",
+      "query": "When can I start swimming or doing water exercises?",
+      "category": "physical_therapy",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_48_aquatic_therapy.txt",
+        "doc_59_returning_to_exercise.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_27",
+      "query": "How should I take care of constipation after surgery?",
+      "category": "medication",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_31_stool_softeners_laxatives.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_28",
+      "query": "What is the recovery like after appendectomy?",
+      "category": "procedure_specific",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_13_appendectomy_recovery.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_29",
+      "query": "How do I stay hydrated during recovery?",
+      "category": "nutrition",
+      "precision_at_5": 0.0,
+      "recall_at_5": 0.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [
+        "doc_54_hydration_guide.txt"
+      ],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_30",
+      "query": "What are the best recipes for Italian pasta?",
+      "category": "out_of_domain",
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_31",
+      "query": "What are the best tourist attractions in Paris?",
+      "category": "out_of_domain",
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_32",
+      "query": "How do I fix a flat tire on my bicycle?",
+      "category": "out_of_domain",
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_33",
+      "query": "What is the current stock price of Apple?",
+      "category": "out_of_domain",
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [],
+      "num_chunks_retrieved": 0
+    },
+    {
+      "id": "rag_34",
+      "query": "Tell me about the history of the Roman Empire",
+      "category": "out_of_domain",
+      "precision_at_5": 0.0,
+      "recall_at_5": 1.0,
+      "mrr": 0.0,
+      "retrieved_sources": [],
+      "relevant_docs": [],
+      "num_chunks_retrieved": 0
+    }
+  ]
+}

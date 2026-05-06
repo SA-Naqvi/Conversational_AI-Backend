@@ -1,0 +1,1 @@
+NOT yielding remaining. buffer='one warm', in_think=True

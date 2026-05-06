@@ -1,0 +1,23 @@
+fastapi
+uvicorn
+httpx
+python-dotenv
+pydantic
+websockets
+spacy
+python-dateutil
+sherpa-onnx
+faster-whisper
+piper-tts
+pydub
+numpy
+librosa
+soundfile
+# RAG
+sentence-transformers
+chromadb
+# Google Calendar API
+google-api-python-client
+google-auth-httplib2
+google-auth-oauthlib
+# OpenFDA + PubMed use httpx (already listed above) — no extra installs needed
